@@ -1,0 +1,88 @@
+.main-footer {
+	margin-top: rem(20);
+	font-family: $font-montserrat;
+	background-color: $color-vulcan;
+	padding: rem(24) rem(30);
+	@include media(">=lg") {
+		margin-top: rem(40);
+		padding: rem(46) rem(116) rem(24);
+	}
+	&__box {
+		display: flex;
+		flex-direction: column;
+		@include media(">=lg") {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	&__nav {
+		color: $color-white;
+		flex-basis: 33.33%;
+		max-width: 33.33%;
+	}
+	&__nav-list {
+		list-style: none;
+		margin-bottom: rem(64);
+	}
+	&__nav-list-item {
+		@include font(18, 36, 400);
+		@include hover-underline-blue();
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	&__social-media {
+		margin-bottom: rem(66);
+		flex-basis: 33.33%;
+		max-width: 33.33%;
+	}
+	&__img-box {
+		position: relative;
+		height: rem(24);
+		width: rem(24);
+	}
+	&__icons {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 5%;
+	}
+	&__icon {
+		position: absolute;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		top: 0;
+		overflow: hidden;
+		@include hover-box-shadow();
+	}
+	&__logo {
+		color: $color-concrete;
+		font-family: $font-heebo;
+		margin-bottom: rem(10);
+		@include font(36, false, 800);
+	}
+	form {
+		flex-basis: 33.33%;
+		max-width: 33.33%;
+	}
+	&__owner {
+		color: $color-concrete;
+		@include font(14, 17);
+		text-align: center;
+		margin-top: rem(154);
+		@include media(">=lg") {
+			margin-top: rem(118);
+		}
+	}
+	&__owner-name {
+		font-weight: $font-weight-bold;
+		color: $color-concrete;
+		transition: color $default-transition;
+		text-decoration: underline;
+		&:hover {
+			color: $color-burnt-sienna;
+		}
+	}
+}

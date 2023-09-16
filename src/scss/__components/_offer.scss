@@ -1,0 +1,75 @@
+.block-offer {
+	h2 {
+		margin-left: rem(39);
+	}
+	@include media(">=lg") {
+		padding: 0 rem(113);
+	}
+	&__offers {
+		display: flex;
+		flex-direction: column;
+		@include media(">=lg") {
+			flex-direction: row;
+		}
+		:hover {
+			&.block-offer__box {
+				box-shadow: rem(-3) rem(30) rem(80) $color-silver;
+			}
+			& .block-offer__cta-box {
+				background-color: $color-curious-blue;
+				color: $color-white;
+				box-shadow: rem(-3) rem(3) rem(10) $color-curious-blue;
+			}
+		}
+	}
+	&__box {
+		padding: rem(49) rem(34);
+		border-radius: rem(12);
+		cursor: pointer;
+		transition: box-shadow $default-transition;
+		@include media(">=lg") {
+			padding: rem(49) rem(54);
+		}
+	}
+	&__icon {
+		width: rem(67);
+		height: rem(67);
+		border-radius: rem(16);
+		color: $color-white;
+		text-align: center;
+		font-size: rem(37);
+		margin-bottom: rem(35);
+		padding-top: rem(15);
+		&--blue {
+			background-color: $color-curious-blue;
+			text-align: center;
+			padding-top: rem(13);
+		}
+		&--green {
+			background-color: $color-jungle-green;
+		}
+		&--red {
+			background-color: $color-burnt-sienna;
+			font-size: rem(37);
+		}
+	}
+	&__paragraph {
+		@include font(16, false, 400);
+		margin-bottom: rem(30);
+		@include media(">=lg") {
+			margin-bottom: rem(39);
+		}
+	}
+	&__cta-box {
+		background-color: $color-alto;
+		padding: rem(9) rem(12);
+		width: max-content;
+		border: none;
+		border-radius: rem(12);
+		cursor: pointer;
+		color: $color-gray;
+		@include font(16, false, 500);
+		transition: box-shadow $default-transition, color $default-transition,
+			background-color $default-transition;
+	}
+}

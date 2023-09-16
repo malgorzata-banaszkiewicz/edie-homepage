@@ -1,0 +1,87 @@
+.header {
+	$header: &;
+	margin: rem(13) 0 rem(48);
+	@include media(">=lg") {
+		margin: rem(42) 0 rem(96);
+	}
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__logo {
+		color: $color-mine-shaft;
+		font-family: $font-heebo;
+		margin-bottom: rem(20);
+		@include font(24);
+		@include media(">=lg") {
+			@include font(36);
+		}
+		transition: opacity $default-transition;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	&__mobile-icons {
+		$block: &;
+		margin-bottom: rem(20);
+		display: flex;
+		justify-content: flex-end;
+		cursor: pointer;
+		@include media(">=lg") {
+			display: none;
+		}
+		&--exit {
+			display: none;
+		}
+		&--open {
+			#{$block} {
+				&--hamburger {
+					display: none;
+				}
+				&--exit {
+					display: block;
+				}
+			}
+		}
+	}
+	&__nav-list {
+		display: none;
+		@include media(">=lg") {
+			display: flex;
+			flex-wrap: wrap;
+			list-style: none;
+			@include font(24, false, 500);
+			gap: rem(50);
+			color: $color-mine-shaft;
+		}
+		&--open {
+			list-style: none;
+			margin-top: var(--headerHeight);
+			max-height: calc(100% - var(--headerHeight));
+			overflow-y: auto;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: $color-curious-blue;
+			z-index: 99;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			#{$header}__nav-list-element {
+				margin-bottom: rem(32);
+				color: $color-white;
+				@include font(28);
+				@include hover-underline-white();
+			}
+		}
+	}
+	&__nav-list-element {
+		@include hover-underline-blue();
+	}
+}

@@ -1,0 +1,67 @@
+.cta {
+	border: none;
+	padding: rem(4);
+	width: rem(291);
+	@include media(">=lg") {
+		width: rem(350);
+	}
+	@include media("<xs") {
+		width: rem(200);
+	}
+	&__teaser {
+		color: $color-gray;
+		@include font(10, false, 500);
+		@include media(">=lg") {
+			@include font(14);
+		}
+	}
+	&__footer-teaser {
+		color: $color-white;
+	}
+	&__input-box {
+		background-color: $color-concrete;
+		border-radius: rem(12);
+		max-width: 100%;
+		position: relative;
+	}
+	&__input {
+		background-color: $color-concrete;
+		border: rem(2) solid transparent;
+		border-radius: rem(12);
+		width: 100%;
+		cursor: pointer;
+		transition: border $default-transition, box-shadow $default-transition;
+		padding: rem(16) rem(90) rem(16) rem(19);
+		@include font(14, false, 500);
+		@include media(">=lg") {
+			@include font(18);
+			padding: rem(15) rem(110) rem(15) rem(21);
+		}
+		&:hover {
+			border: rem(2) solid $color-curious-blue;
+		}
+		&:focus {
+			outline: none;
+			box-shadow: rem(-3) rem(3) rem(10) $color-curious-blue;
+		}
+	}
+	&__btn {
+		background-color: $color-curious-blue;
+		padding: rem(9) rem(21);
+		border-radius: rem(12);
+		top: rem(8);
+		height: calc(100% - rem(16));
+		right: rem(8);
+		border: none;
+		color: $color-concrete;
+		cursor: pointer;
+		position: absolute;
+		@include font(14, false, 500);
+		@include media(">=lg") {
+			@include font(18);
+			padding-right: rem(27);
+			top: rem(8);
+		}
+		@include hover-box-shadow();
+	}
+}

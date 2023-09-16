@@ -1,0 +1,68 @@
+.block-team {
+	@include media(">=lg") {
+		padding: 0 rem(113);
+	}
+	&__boxes {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: rem(50);
+		@include media(">=lg") {
+			grid-template-columns: 50% 1fr;
+			grid-gap: rem(48);
+		}
+	}
+	&__text-box {
+		margin-bottom: rem(36);
+	}
+	&__greeting {
+		color: $color-burnt-sienna;
+		@include font(18, false, 500);
+	}
+	&__photos-box {
+		display: grid;
+		grid-template-columns: repeat(2, calc(50% - rem(10)));
+		grid-template-rows: repeat(2, 50%);
+		gap: rem(20);
+	}
+	&__employee {
+		border-radius: rem(24);
+		overflow: hidden;
+		align-content: center;
+		justify-content: center;
+		padding-top: 44.3%;
+		position: relative;
+		&:nth-of-type(1) {
+			grid-row: span 2;
+			align-self: center;
+			grid-column: 1 / 1;
+			width: 100%;
+			height: rem(187);
+			@include media(">=xxl") {
+				height: rem(310);
+			}
+		}
+		&:nth-of-type(2) {
+			grid-row: 1 / 2;
+			grid-column: 2 / 2;
+			width: 84.3%;
+			height: rem(145);
+			align-self: end;
+			@include media(">=xxl") {
+				height: rem(260);
+			}
+		}
+		&:nth-of-type(3) {
+			grid-row: 2 / 3;
+			grid-column: 2 / 2;
+			width: 94.1%;
+			height: rem(167);
+			@include media(">=xxl") {
+				height: rem(300);
+			}
+		}
+	}
+	&__img {
+		@include object-fit-cover();
+		overflow: hidden;
+	}
+}

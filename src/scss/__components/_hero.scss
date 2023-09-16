@@ -1,0 +1,49 @@
+.block-hero {
+	&__heading-part {
+		padding: 0 rem(30);
+		margin-bottom: rem(15);
+		@include media(">=xxl") {
+			padding: 0 rem(225);
+			margin-bottom: rem(42);
+		}
+	}
+	&__teaser {
+		color: $color-curious-blue;
+		@include font(12, false, 500);
+		@include media(">=lg") {
+			@include font(18, false, 500);
+		}
+	}
+	&__title {
+		color: $color-mine-shaft;
+	}
+	&__image {
+		display: block;
+		position: relative;
+		padding-top: 25%;
+		margin-bottom: rem(22);
+		@include media(">=lg") {
+			margin-bottom: rem(42);
+		}
+	}
+	&__img {
+		@include object-fit-cover();
+		border-radius: rem(18);
+		overflow: hidden;
+	}
+	&__story-part {
+		max-width: rem(275);
+		margin-left: rem(30);
+		@include media(">=lg") {
+			margin-bottom: rem(42);
+			max-width: rem(366);
+			margin-left: rem(225);
+		}
+	}
+	&__story {
+		margin-bottom: rem(31);
+		@include media(">=lg") {
+			margin-bottom: rem(42);
+		}
+	}
+}
